@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Genres,Trailer,Cast,Director,Episode,Writer,Detail
+from .models import Genres,Trailer,Cast,Director,Episode,Writer,Detail,Notaion
 from django.utils.translation import gettext_lazy as _
 # Register your models here.
 admin.site.site_title = admin.site.site_header = 'Dashboard'
@@ -11,9 +11,9 @@ class GenresAdmin(admin.ModelAdmin):
 admin.site.register(Genres,GenresAdmin)
 
 class CastAdmin(admin.ModelAdmin):
-    search_fields = ('name','slug')
-    list_display = ('name','slug')
-    list_filter = ('name','slug')
+    search_fields = ('name','slug','nation')
+    list_display = ('name','slug','nation','isstar')
+    list_filter = ('name','slug','nation','isstar')
     prepopulated_fields = {'slug':('name',)}
 admin.site.register(Cast,CastAdmin)
 
@@ -69,3 +69,5 @@ class DetailAdmin(admin.ModelAdmin):
     )
     filter_horizontal = ('genres','casts','trailer','directors','episodes','writers')
 admin.site.register(Detail,DetailAdmin)
+
+admin.site.register(Notaion)

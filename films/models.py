@@ -47,6 +47,29 @@ class Trailer(models.Model):
     def natural_key(self):
         return (self.name,)
 
+class NotaionManger(models.Manager):
+    def get_by_natural_key(self, name):
+        return self.get(name=name)
+
+class Notaion(models.Model):
+    REGION_CHOICES = (
+        (1, _("Asia")),
+        (2, _("Asia")),
+        (3, _("America")),
+        (4, _("Africa")),
+        (5, _("Australia")),
+        (6, _("Antarctica")),
+        (7, _("North America")),
+        (8, _("South America")),
+    )
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=40)
+    region = models.IntegerField(choices=REGION_CHOICES, default=1)
+    def __str__(self):
+        return self.name
+    def natural_key(self):
+        return (self.name,)
+
 class CastManager(models.Manager):
     use_in_migrations = True
 
@@ -55,6 +78,15 @@ class CastManager(models.Manager):
 class Cast(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=40)
+    nation = models.ForeignKey(Notaion,on_delete=models.CASCADE)
+    isstar = models.BooleanField(
+         _('Star'),
+        default=False,
+        help_text=_(
+            'The casr is star/normal '
+            'You cant click it'
+        ),
+    )
     objects = CastManager()
     def __str__(self):
         return self.name
