@@ -54,7 +54,6 @@ class NotaionManger(models.Manager):
 class Notaion(models.Model):
     REGION_CHOICES = (
         (1, _("Asia")),
-        (2, _("Asia")),
         (3, _("America")),
         (4, _("Africa")),
         (5, _("Australia")),
