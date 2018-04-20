@@ -36,9 +36,9 @@ class EpisodeAdmin(admin.ModelAdmin):
 admin.site.register(Episode,EpisodeAdmin)
 
 class WriterAdmin(admin.ModelAdmin):
-    search_fields = ('name','slug')
-    list_display = ('name','slug')
-    list_filter = ('name','slug')
+    search_fields = ('name','slug','sex','birth')
+    list_display = ('name','slug','sex','birth')
+    list_filter = ('name','slug','sex')
     prepopulated_fields = {'slug':('name',)}
 admin.site.register(Writer,WriterAdmin)
 

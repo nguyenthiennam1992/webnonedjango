@@ -86,6 +86,7 @@ class Cast(models.Model):
         ),
     )
     birth = models.DateField(_('Birth day'), default=timezone.now)
+    titleImage = models.URLField(_('URL Image'),max_length=1000)
     nation = models.ForeignKey(Notaion,on_delete=models.CASCADE)
     isstar = models.BooleanField(
          _('Star'),
@@ -118,6 +119,7 @@ class Director(models.Model):
         ),
     )
     birth = models.DateField(_('Birth day'), default=timezone.now)
+    titleImage = models.URLField(_('URL Image'),max_length=1000)
     objects = DirectorManager()
     def __str__(self):
         return self.name
@@ -151,6 +153,16 @@ class WriterManager(models.Manager):
 class Writer(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=40)
+    sex = models.BooleanField(
+         _('Sex'),
+        default=False,
+        help_text=_(
+            'The casr is male '
+            'You cant click it'
+        ),
+    )
+    birth = models.DateField(_('Birth day'), default=timezone.now)
+    titleImage = models.URLField(_('URL Image'),max_length=1000)
     objects = WriterManager()
     def __str__(self):
         return self.name 
