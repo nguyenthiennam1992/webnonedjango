@@ -60,7 +60,7 @@ class DetailAdmin(admin.ModelAdmin):
     list_filter = ('directors','casts','writers','genres','watchDate')
     prepopulated_fields = {'slug':('name',)}
     fieldsets = (
-        (None, {'fields': ('name', 'slug','rating')}),
+        (None, {'fields': ('name', 'slug','rating','nation')}),
         (_('Movie info'), {'fields': ('genres','trailer','episodes')}),
         (_('Person'),{'fields':('casts','directors','writers')}),
         (_('Movie is'), {'fields': ('status', 'hot')}),
