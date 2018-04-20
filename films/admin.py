@@ -70,4 +70,9 @@ class DetailAdmin(admin.ModelAdmin):
     filter_horizontal = ('genres','casts','trailer','directors','episodes','writers')
 admin.site.register(Detail,DetailAdmin)
 
-admin.site.register(Notaion)
+class NotaionAdmin(admin.ModelAdmin):
+    search_fields = ('name','slug')
+    list_display = ('name','slug')
+    list_filter = ('name','slug','region')
+    prepopulated_fields = {'slug':('name',)}
+admin.site.register(Notaion,NotaionAdmin)
