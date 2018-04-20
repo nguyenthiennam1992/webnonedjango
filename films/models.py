@@ -30,17 +30,22 @@ class Genres(models.Model):
 
     def natural_key(self):
         return (self.name,)
+class TrailerManager(models.Manager):
+    use_in_migrations = True
 
+    def get_by_natural_key(self, name):
+        return self.get(name=name)
 class Trailer(models.Model):
+    name = models.CharField(max_length=255)
     urlData = models.URLField(max_length=1000)
     background = models.URLField(max_length=1000)
     slug = models.SlugField(max_length=40)
-    # objects = TrailerManager()
-    class Meta:
-        verbose_name = _('Trailer')
-        verbose_name_plural = _('Trailer')
+    watchDate = models.DateTimeField(_('released date'), default=timezone.now)
+    objects = TrailerManager()
     def __str__(self):
-        return self.slug
+        return self.name
+    def natural_key(self):
+        return (self.name,)
 
 class CastManager(models.Manager):
     use_in_migrations = True
@@ -79,8 +84,10 @@ class Episode(models.Model):
     name = models.CharField(max_length=255)
     desciption = models.TextField(max_length=1000)
     urlData = models.URLField(max_length=1000)
+    titleImage = models.URLField(max_length=1000)
     slug = models.SlugField(max_length=40)
-    time = models.IntegerField
+    time = models.IntegerField(default=0)
+    released = models.DateTimeField(_('released date'), default=timezone.now)
     objects = EpisodeManager()
     def __str__(self):
         return self.name
@@ -104,6 +111,11 @@ class Writer(models.Model):
 class Detail(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=40)
+    rating = models.IntegerField(default=0)
+    trailer = models.ManyToManyField(Trailer, verbose_name=_('Trailer'),help_text=_(
+            'Chosen trailer for film '
+            'click remove all/add all clear list/add full list'
+        ),)
     directors = models.ManyToManyField(Director, verbose_name=_('Director'),help_text=_(
             'Film dorector, click text to add list here '
             'click remove all/add all clear list/add full list'
@@ -143,7 +155,7 @@ class Detail(models.Model):
         ),
     )
     created = models.DateTimeField(_('date created'), default=timezone.now)
-    watchDate = models.DateTimeField(_('date puslish'), default=timezone.now)
+    watchDate = models.DateTimeField(_('released date'), default=timezone.now)
     modified = models.DateTimeField(_('date joined'), default=timezone.now)
     def __str__(self):
         return self.name
