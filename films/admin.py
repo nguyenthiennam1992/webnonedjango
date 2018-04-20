@@ -11,15 +11,15 @@ class GenresAdmin(admin.ModelAdmin):
 admin.site.register(Genres,GenresAdmin)
 
 class CastAdmin(admin.ModelAdmin):
-    search_fields = ('name','slug','nation')
+    search_fields = ('name','slug','nation','sex','birth')
     list_display = ('name','slug','nation','isstar')
     list_filter = ('name','slug','nation','isstar')
     prepopulated_fields = {'slug':('name',)}
 admin.site.register(Cast,CastAdmin)
 
 class DirectorAdmin(admin.ModelAdmin):
-    search_fields = ('name','slug')
-    list_display = ('name','slug')
+    search_fields = ('name','slug','sex','birth')
+    list_display = ('name','slug','sex','birth')
     prepopulated_fields = {'slug':('name',)}
 admin.site.register(Director,DirectorAdmin)
 
