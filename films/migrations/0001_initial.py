@@ -20,7 +20,6 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=255)),
                 ('slug', models.SlugField(max_length=40)),
-                ('isstar', models.BooleanField(default=False, help_text='The casr is star/normal You cant click it', verbose_name='Star')),
             ],
             managers=[
                 ('objects', films.models.CastManager()),
@@ -88,15 +87,6 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='Notaion',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('slug', models.SlugField(max_length=40)),
-                ('region', models.IntegerField(choices=[(1, 'Asia'), (2, 'Asia'), (3, 'America'), (4, 'Africa'), (5, 'Australia'), (6, 'Antarctica'), (7, 'North America'), (8, 'South America')], default=1)),
-            ],
-        ),
-        migrations.CreateModel(
             name='Trailer',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
@@ -145,10 +135,5 @@ class Migration(migrations.Migration):
             model_name='detail',
             name='writers',
             field=models.ManyToManyField(help_text=' The Writer, click text to add list here click remove all/add all clear list/add full list', to='films.Writer', verbose_name='Writer'),
-        ),
-        migrations.AddField(
-            model_name='cast',
-            name='nation',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='films.Notaion'),
         ),
     ]

@@ -144,6 +144,7 @@ class Detail(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=40)
     rating = models.IntegerField(default=0)
+    nation = models.ForeignKey(Notaion,on_delete=models.CASCADE)
     trailer = models.ManyToManyField(Trailer, verbose_name=_('Trailer'),help_text=_(
             'Chosen trailer for film '
             'click remove all/add all clear list/add full list'
