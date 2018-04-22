@@ -13,6 +13,7 @@ body{
 }
 /*Top navbar*/
 .topnav {
+    padding-left: 30px;
     overflow: hidden;
     background-color: #e9e9e9;
   }
@@ -93,7 +94,7 @@ background: #ccc;
     background-color: #ddd;
 }
 .Navspan{
-    font-size:30px;cursor:pointer;color: white; position: fixed
+    font-size:30px;cursor:pointer;color: black; position: fixed
 }
 /*css menu meta*/
 .overlay {
