@@ -52,87 +52,79 @@
     {% endblock %}
 	
 	<body>
-            <!--menu contact-->
-            <div id="myNav" class="overlay">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <div class="overlay-content">
-                    <a href="#">About</a>
-                    <a href="#">Services</a>
-                    <a href="#">Clients</a>
-                    <a href="#">Contact</a>
-                </div>
+        <!--menu contact-->
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">Contact</a>
             </div>
-            <span class="Navspan" onclick="openNav()">&#9776; </span>
+        </div>
+        <span class="Navspan" onclick="openNav()">&#9776; </span>
+        
+        <!--Menu nav-->
+        <div class="topnav">
+            <a class="active" href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <div class="search-container">
+                <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
 
-            <!--title-->
-            <div class="sidenav">
-                <a href="#Adventure film">Adventure film</a>
-                <a href="#Adult movies">Adult movies</a>
-                <a href="#Action film">Action film</a>
-                <a href="#Cartoon">Cartoon</a>
+        <!--slide-->
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="{% static 'homepage/media/Slide/la.jpg' %}" alt="Los Angeles" width="1100" height="500">
+                </div>
+                <div class="carousel-item">
+                <img src="{% static 'homepage/media/Slide/chicago.jpg' %}" alt="Chicago" width="1100" height="500">
+                </div>
+                <div class="carousel-item">
+                <img src="{% static 'homepage/media/Slide/ny.jpg' %}" alt="New York" width="1100" height="500">
+                </div>
             </div>
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
 
-            <!--Main form-->
-            <div class="main">
-                <!--Menu nav-->
-                <div class="topnav">
-                    <a class="active" href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
-                    <div class="search-container">
-                        <form action="/action_page.php">
-                        <input type="text" placeholder="Search.." name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
-                    </div>
-                </div>
-                <!--slide-->
-                <div id="demo" class="carousel slide" data-ride="carousel">
-                    <ul class="carousel-indicators">
-                        <li data-target="#demo" data-slide-to="0" class="active"></li>
-                        <li data-target="#demo" data-slide-to="1"></li>
-                        <li data-target="#demo" data-slide-to="2"></li>
-                    </ul>
-                    <!-- The slideshow -->
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                        <img src="{% static 'homepage/media/Slide/la.jpg' %}" alt="Los Angeles" width="1100" height="500">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="{% static 'homepage/media/Slide/chicago.jpg' %}" alt="Chicago" width="1100" height="500">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="{% static 'homepage/media/Slide/ny.jpg' %}" alt="New York" width="1100" height="500">
-                        </div>
-                    </div>
-                    <!-- Left and right controls -->
-                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#demo" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-                </div>
-                <!--Tab main-->
-                <div class="tab">
-                    <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-                    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-                    </div>
-                    <div id="London" class="tabcontent">
-                        <h3>London</h3>
-                        <p>London is the capital city of England.</p>
-                    </div>
-                    <div id="Paris" class="tabcontent">
-                        <h3>Paris</h3>
-                        <p>Paris is the capital of France.</p> 
-                    </div>
-                    <div id="Tokyo" class="tabcontent">
-                        <h3>Tokyo</h3>
-                        <p>Tokyo is the capital of Japan.</p>
-                    </div>
-                </div>
+        <!--Tab main-->
+        <div class="main-tab">
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
             </div>
+                <div id="London" class="tabcontent">
+                    <h3>London</h3>
+                    <p>London is the capital city of England.</p>
+                </div>
+                <div id="Paris" class="tabcontent">
+                    <h3>Paris</h3>
+                    <p>Paris is the capital of France.</p> 
+                </div>
+                <div id="Tokyo" class="tabcontent">
+                    <h3>Tokyo</h3>
+                    <p>Tokyo is the capital of Japan.</p>
+                </div>
+        </div>
             <footer class="footer">
                 <p>By code: Hege Refsnes</p>
                 <p>Contact information: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
