@@ -1,8 +1,9 @@
 from django.contrib import admin
 from .models import Genres,Trailer,Cast,Director,Episode,Writer,Detail,Notaion
 from django.utils.translation import gettext_lazy as _
-# Register your models here.
+# Change title and header site admin.
 admin.site.site_title = admin.site.site_header = 'Dashboard'
+
 class GenresAdmin(admin.ModelAdmin):
     search_fields = ('name','slug')
     list_display = ('name','slug','details','disable')
