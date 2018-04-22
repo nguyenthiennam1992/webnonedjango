@@ -1,6 +1,6 @@
 /*scrip menu click*/
 function openNav() {
-    document.getElementById("myNav").style.width = "250px";
+    document.getElementById("myNav").style.width = "150px";
 }
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
