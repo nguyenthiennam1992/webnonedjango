@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="title" content="Chuyên gia máy vi tính" />
     <meta name="keywords" content="" />
-    <meta name="description" content="Chuyên gia máy vi tínhc" />
+    <meta name="description" content="Chuyên gia máy vi tính" />
     <meta name="Keyphrases" content="Chuyên gia máy vi tính" />    
     <meta name="search engines" content="Google, Bing, Yahoo, MSN, LookSmart, AltaVista, Excite, NorthernLight, DirectHit, Lycos, HotBot, dmoz, CNet, AOL, AskJeeves, Fast, Snap, Magellan, Go" />    
     <meta name="Rating" content="Chuyên gia máy vi tính" />
@@ -24,7 +24,6 @@
     <meta property="og:site_name" content="Chuyên gia máy vi tính"/>
     <meta property="og:type" content="website"/>
 
-
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
@@ -38,12 +37,42 @@
 
 	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
 	
-	
+    {% load static %}
+    {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'homepage/css/style.css' %}">
+    {% endblock %}
+
+    {% block js %}
+        <script src="{% static 'homepage/js/style.js' %}"></script>
+    {% endblock %}
 	
 	<body>
-    <h1>Hello word@!</h1>
-	
-
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Clients</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <span class="Navspan" onclick="openNav()">&#9776; </span>
+            
+            <div class="sidenav">
+                <a href="#Adventure film">Adventure film</a>
+                <a href="#Adult movies">Adult movies</a>
+                <a href="#Action film">Action film</a>
+                <a href="#Cartoon">Cartoon</a>
+            </div>
+            <div class="main">
+                <h2>Auto Sidebar</h2>
+                <p>This sidebar is as tall as its content (the links), and is always shown.</p>
+                <p>Scroll down the page to see the result.</p>
+                <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+                <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+                <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+                <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+            </div>   
 	</body>
 </html>
 
