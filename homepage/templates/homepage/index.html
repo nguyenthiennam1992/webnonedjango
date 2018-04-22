@@ -40,13 +40,19 @@
     {% load static %}
     {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'homepage/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-4.1.0/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome-free-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css' %}">
     {% endblock %}
 
     {% block js %}
         <script src="{% static 'homepage/js/style.js' %}"></script>
+        <script src="{% static 'homepage/js/popper.min.js' %}"></script>
+        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap-4.1.0/bootstrap.min.js' %}"></script>
     {% endblock %}
 	
 	<body>
+            <!--menu contact-->
             <div id="myNav" class="overlay">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
@@ -57,14 +63,57 @@
                 </div>
             </div>
             <span class="Navspan" onclick="openNav()">&#9776; </span>
-            
+
+            <!--title-->
             <div class="sidenav">
                 <a href="#Adventure film">Adventure film</a>
                 <a href="#Adult movies">Adult movies</a>
                 <a href="#Action film">Action film</a>
                 <a href="#Cartoon">Cartoon</a>
             </div>
+
+            <!--Main form-->
             <div class="main">
+                <!--Menu nav-->
+                <div class="topnav">
+                    <a class="active" href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <div class="search-container">
+                        <form action="/action_page.php">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <!--slide-->
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <img src="{% static 'homepage/media/Slide/la.jpg' %}" alt="Los Angeles">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="{% static 'homepage/media/Slide/chicago.jpg' %}" alt="Chicago">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="{% static 'homepage/media/Slide/ny.jpg' %}" alt="New York">
+                        </div>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+                <!--Tab main-->
                 <div class="tab">
                     <button class="tablinks" onclick="openCity(event, 'London')">London</button>
                     <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
