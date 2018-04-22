@@ -3,7 +3,8 @@ from django.contrib.contenttypes.models import ContentType
 from django.utils.translation import gettext_lazy as _
 from django.db.models.manager import EmptyManager
 from django.utils import timezone
-# Create your models here.
+
+
 class GenresManager(models.Manager):
     use_in_migrations = True
 
@@ -81,7 +82,7 @@ class Cast(models.Model):
          _('Sex'),
         default=False,
         help_text=_(
-            'The casr is male '
+            'The cast is male '
             'You cant click it'
         ),
     )
