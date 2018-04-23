@@ -1,9 +1,11 @@
 /*scrip menu click*/
 function openNav() {
-    document.getElementById("myNav").style.width = "150px";
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
 }
 function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
 }
 /*scrip run tab load size*/
 function openCity(evt, cityName) {
