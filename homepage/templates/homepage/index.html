@@ -113,7 +113,9 @@
                 <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
             </div>
                 <div id="London" class="tabcontent">
-                    {{ CLIENT_ID }}
+                    {% for file in files %}
+                        {{ file.id }}
+                    {% endfor %}
                 </div>
                 <div id="Paris" class="tabcontent">
                     <h3>Paris</h3>
